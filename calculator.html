@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <td colspan="4" id="screen" style="text-align: right;">0</td>
+        </tr>
+        <tr>
+           <td><button onclick="clickCell(this.innerText)">1</button></td>
+           <td><button onclick="clickCell(this.innerText)">2</button></td>
+           <td><button onclick="clickCell(this.innerText)">3</button></td>
+           <td><button onclick="clickCell(this.innerText)">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="clickCell(this.innerText)">4</button></td>
+            <td><button onclick="clickCell(this.innerText)">5</button></td>
+            <td><button onclick="clickCell(this.innerText)">6</button></td>
+            <td><button onclick="clickCell(this.innerText)">-</button></td>
+         </tr>
+         <tr>
+            <td><button onclick="clickCell(this.innerText)">7</button></td>
+            <td><button onclick="clickCell(this.innerText)">8</button></td>
+            <td><button onclick="clickCell(this.innerText)">9</button></td>
+            <td><button onclick="clickCell('*')">x</button></td>
+         </tr>
+         <tr>
+            <td><button onclick="clearScreen()">C</button></td>
+            <td><button onclick="clickCell(this.innerText)">0</button></td>
+            <td><button onclick="calculate()">=</button></td>
+            <td><button onclick="clickCell(this.innerText)">/</button></td>
+         </tr>
+    </table>
+
+    <script>
+        let screen = document.getElementById("screen");
+
+        function clickCell(value){
+           if(screen.innerText == 0)
+           screen.innerText = value;
+           else
+           screen.innerText += value;
+        }
+
+        function clearScreen(){
+            screen.innerText = 0
+        }
+
+        function calculate(){
+            let result = eval(screen.innerText);
+            screen.innerText = result;
+        }
+    </script>
+</body>
+</html>
